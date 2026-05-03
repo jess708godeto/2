@@ -17,7 +17,8 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/empresas')
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+    axios.get(`${apiUrl}/api/empresas`)
       .then(res => setEmpresas(res.data))
       .catch(err => console.error(err));
   }, []);
