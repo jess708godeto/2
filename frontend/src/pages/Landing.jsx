@@ -7,7 +7,7 @@ const Landing = () => {
   const [empresas, setEmpresas] = useState([]);
 
   useEffect(() => {
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://neoua2.onrender.com';
     axios.get(`${apiUrl}/api/empresas`)
       .then(res => setEmpresas(res.data))
       .catch(err => console.error(err));
