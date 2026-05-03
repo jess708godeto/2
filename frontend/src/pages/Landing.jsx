@@ -7,7 +7,8 @@ const Landing = () => {
   const [empresas, setEmpresas] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/empresas')
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+    axios.get(`${apiUrl}/api/empresas`)
       .then(res => setEmpresas(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -27,7 +28,7 @@ const Landing = () => {
           <div className="absolute -top-10 -left-10 w-32 h-32 bg-primary/20 blur-3xl rounded-full"></div>
           <h2 className="text-2xl font-bold mb-4">Quiénes somos</h2>
           <p className="text-lg text-gray-300 leading-relaxed">
-            Somos un equipo de estudiantes que desarrolla la plataforma NeoUA enfocada en mejorar el aprendizaje digital. Buscamos ofrecer una experiencia educativa más accesible, personalizada y apoyada por tecnología, integrando herramientas inteligentes que se adaptan a cada usuario.
+            Somos un equipo de estudiantes que desarrolla la plataforma NeoUA enfocada en mejorar el aprendizaje digital. Buscamos ofrecer una experiencia educativa más accesible, personalizada y[...]
           </p>
         </div>
       </div>
@@ -37,7 +38,7 @@ const Landing = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Súper Poderes de NeoUA</h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">Todo lo que necesitas para llevar la capacitación de tu equipo al siguiente nivel, en una sola plataforma intuitiva y segura.</p>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">Todo lo que necesitas para llevar la capacitación de tu equipo al siguiente nivel, en una sola plataforma intuitiva y segura.</p[...]
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -83,7 +84,7 @@ const Landing = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-surface/50 p-8 rounded-2xl border border-white/5 relative">
               <Quote size={40} className="text-white/10 absolute top-4 right-4" />
-              <p className="text-gray-300 mb-6 italic">"La forma en que esta plataforma integra la inteligencia artificial para personalizar el aprendizaje corporativo es el verdadero futuro de la educación."</p>
+              <p className="text-gray-300 mb-6 italic">"La forma en que esta plataforma integra la inteligencia artificial para personalizar el aprendizaje corporativo es el verdadero futuro de la[...]
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold">MZ</div>
                 <div>
@@ -95,7 +96,7 @@ const Landing = () => {
 
             <div className="bg-surface/50 p-8 rounded-2xl border border-white/5 relative">
               <Quote size={40} className="text-white/10 absolute top-4 right-4" />
-              <p className="text-gray-300 mb-6 italic">"Innovación pura. Lograr simplificar los procesos de compliance y capacitación en una sola herramienta es exactamente lo que las empresas necesitan hoy."</p>
+              <p className="text-gray-300 mb-6 italic">"Innovación pura. Lograr simplificar los procesos de compliance y capacitación en una sola herramienta es exactamente lo que las empresas n[...]
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold">BG</div>
                 <div>
