@@ -187,9 +187,9 @@ app.get('/api/cursos/:id', authenticateToken, (req, res) => {
 });
 
 app.get('/api/cursos/:id/evaluacion', authenticateToken, (req, res) => {
-  const eval = db.prepare('SELECT * FROM evaluaciones WHERE curso_id = ?').get(req.params.id);
-  if (!eval) return res.json({ preguntas: [] });
-  res.json({ preguntas: JSON.parse(eval.preguntas_json) });
+  const evaluacion = db.prepare('SELECT * FROM evaluaciones WHERE curso_id = ?').get(req.params.id);
+  if (!evaluacion) return res.json({ preguntas: [] });
+  res.json({ preguntas: JSON.parse(evaluacion.preguntas_json) });
 });
 
 app.post('/api/cursos/:id/certificar', authenticateToken, (req, res) => {
