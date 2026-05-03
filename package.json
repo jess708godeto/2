@@ -1,4 +1,16 @@
 {
+  "name": "2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd frontend && npm run build",
+    "dev": "cd frontend && npm run dev",
+    "install": "npm install && cd frontend && npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.5.0",
     "axios": "^1.15.2",
