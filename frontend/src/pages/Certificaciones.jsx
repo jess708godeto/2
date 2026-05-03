@@ -19,7 +19,7 @@ const Certificaciones = () => {
 
   const handleDownloadPDF = async (cursoId, titulo) => {
     try {
-      const response = await fetch(`http://localhost:3001/api/cursos/${cursoId}/certificado-pdf`, {
+      const response = await fetch(`https://neoua2.onrender.com/api/cursos/${cursoId}/certificado-pdf`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
